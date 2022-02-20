@@ -1,9 +1,37 @@
+//open 영화 검색 api 사용하기
+import axios from "axios";
+
+function fetchMocies() {
+  axios
+    .get("https://www.omdbapi.com/?apikey=7035c60c&s=frozen")
+    .then(res =>{
+      console.log(res)
+      const h1El = document.querySelector('h1')
+      const imgEl = document.querySelector('img')
+      h1El.textContent = res.data.Search[0].Title
+      imgEl.src = res.data.Search[0].Poster
+    })
+}
+fetchMocies()
+
 //JSON(JaveScript Object Notaion)
 //자바스크립트의 객체 표기법
 //!개발자 도구에서 보이는 객체 형식의 json파일의 데이터는
 //하나의 문자 데이터다.
 import myData from './myData.json'
 console.log(myData)
+
+//로컬 스토리지
+//localStorage.setItem('myData', myData)
+localStorage.setItem('myData', JSON.stringify(myData))
+//콘솔에서 데이터 확인해 보기
+console.log(localStorage.getItem('myData'))
+//콘솔에서 객체 json데이터 객체화 시켜 보기
+console.log(JSON.parse(localStorage.getItem('myData')))
+//로컬 스토리지 데이터 삭제
+localStorage.removeItem(myData)
+
+
 
 // 모듈안에 lodash 라는 패키지를 불러와서 lodash.js를 파일을 
 //불러서 가져오는 것이다.
