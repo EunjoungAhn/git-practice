@@ -1,3 +1,10 @@
+//JSON(JaveScript Object Notaion)
+//자바스크립트의 객체 표기법
+//!개발자 도구에서 보이는 객체 형식의 json파일의 데이터는
+//하나의 문자 데이터다.
+import myData from './myData.json'
+console.log(myData)
+
 // 모듈안에 lodash 라는 패키지를 불러와서 lodash.js를 파일을 
 //불러서 가져오는 것이다.
 import _ from 'lodash';
